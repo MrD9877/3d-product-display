@@ -157,7 +157,7 @@ type GLTFResult = GLTF & {
 
 export function Hovercar(props: JSX.IntrinsicElements["group"]) {
   const group = React.useRef<THREE.Group>(null);
-  const { nodes, materials, animations } = useGLTF("/models/hoverCar2.glb") as unknown as GLTFResult;
+  const { nodes, materials, animations } = useGLTF("https://j-shop.s3.eu-north-1.amazonaws.com/hoverCar2.glb") as unknown as GLTFResult;
   const { actions } = useAnimations(animations, group);
   return (
     <group ref={group} {...props} dispose={null}>
@@ -463,4 +463,4 @@ export function Hovercar(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/models/hoverCar2.glb");
+useGLTF.preload("https://j-shop.s3.eu-north-1.amazonaws.com/hoverCar2.glb");
