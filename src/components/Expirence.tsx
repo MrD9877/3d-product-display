@@ -1,16 +1,13 @@
 import React, { useEffect } from "react";
 import { Chair } from "./Chair";
 import { MeshReflectorMaterial, PresentationControls, Stage } from "@react-three/drei";
-import { useControls } from "leva";
 import { useThree } from "@react-three/fiber";
-import { Hovercar } from "./Hovercar";
 
 export default function Expirence() {
-  const { cameraZoom } = useControls({ name: "z", cameraZoom: 3.8 });
   const { camera } = useThree();
   useEffect(() => {
-    camera.position.z = cameraZoom;
-  }, [camera, cameraZoom]);
+    camera.position.z = 3.8;
+  }, [camera]);
   return (
     <>
       <PresentationControls speed={1.5} global polar={[-0.1, Math.PI / 4]} rotation={[Math.PI / 8, Math.PI / 4, 0]}>
